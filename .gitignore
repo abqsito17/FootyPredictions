@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Credentials
+*.env
+
+# Streamlit cache
+.streamlit/
+
+# Any dataset or large CSV if needed
+data/*.csv
+!data/team_overview.csv    # If you WANT to keep a specific file

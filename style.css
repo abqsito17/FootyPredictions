@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Remove Streamlit's extra margin on Markdown wrapper */
+div[data-testid="stMarkdownContainer"] {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove Streamlit’s wrapper spacing around headings */
+div[data-testid="stHeadingWithActionElements"] {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Pull your header up closer to the PL logo */
+.header {
+    margin-top: -20px !important;  /* Increase to -30px or -40px if needed */
+}
+
+/*GLOBAL*/
+body, .main, .stApp {
+  background-size: cover;
+  background-position: center;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+footer, #MainMenu, header { visibility: hidden !important; }
+
+/*HEADER / LOGO / TITLE*/
+.header {
+  text-align: center !important;
+  margin-top: -10px !important;
+}
+.pl-logo {
+  width: 320px !important;
+  max-width: 40vw !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  transform: translateY(-10px) !important;
+}
+.header h3 {
+  font-size: 28px;
+  text-align: center !important;
+  color: #7f7f7f;
+  font-weight: 700;
+  margin: 2px 0 0 0;
+}
+
+/*VS TEXT*/
+.vs-text {
+  font-size: 34px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 10px 0 !important;
+  text-align: center !important;
+}
+
+/*LAYOUT & COLUMNS*/
+div[data-testid="stColumns"] > div,
+[data-testid="column"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+  gap: 10px !important;
+  overflow: visible !important;
+}
+
+.block-container { padding-top: 6px !important; }
+
+div.stElementContainer.element-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Select Labels & Dropdowns */
+label[data-baseweb="label"],
+div.stElementContainer.element-container label[data-testid="stWidgetLabel"] {
+  display: block !important;
+  margin: 0 auto 6px auto !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  width: fit-content !important;
+  line-height: 1.1 !important;
+}
+/* Match dropdown width with team-box width */
+div[data-baseweb="select"] {
+    width: 380px !important;       /* same as team-box */
+    max-width: 100% !important;
+    margin: 0 auto 8px auto !important;
+    text-align: center !important;
+}
+
+div[data-baseweb="select"] > div {
+  border-radius: 10px !important;
+  background-color: #2A003E !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  padding-left: 12px !important;
+}
+
+/*DIAMOND and team LOGO*/
+.diamond-container {
+  position: relative !important;
+  width: 150px !important;
+  height: 150px !important;
+  margin: 15px auto 18px auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  z-index: 20 !important;
+}
+.diamond {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(145deg, #4a1768, #2d0040) !important;
+  transform: rotate(45deg) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.28) !important;
+  z-index: 10 !important;
+}
+.team-logo,
+.diamond-container img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 90px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  z-index: 30 !important;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.45)) !important;
+  pointer-events: none !important;
+}
+.diamond-container:hover .diamond {
+  box-shadow: 0 0 25px rgba(255, 184, 0, 0.38) !important;
+  transition: box-shadow 0.3s ease !important;
+}
+
+
+/*UNIFIED WRAPPING BOXES*/
+.team-box, .prediction-box {
+  background: linear-gradient(180deg, rgba(45, 0, 75, 0.95) 0%, rgba(25, 0, 45, 0.9) 100%);
+  border-radius: 22px;
+  padding: 25px 30px;
+  text-align: center;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+  color: #fff;
+  width: 380px;
+  max-width: 90%;
+  margin: 0 auto 8px auto;
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 5;
+}
+
+.team-box h4, .prediction-box h5 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  margin-bottom: 10px !important;
+  margin-top: 30px !important;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Stats and Text */
+.team-box p {
+  font-size: 18px !important;
+  color: #e0e0e0 !important;
+  margin: 4px 0 !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+}
+
+.prediction-result { margin-bottom: 10px; }
+.prediction-label {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+}
+.prediction-value {
+  font-size: 24px;
+  color: #ffb800;
+  font-weight: 800;
+}
+.prediction-box p {
+  color: #ddd !important;
+  font-size: 15px !important;
+  margin: 5px 0 !important;
+}
+.prediction-placeholder {
+  font-style: italic;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Keep logos inside box */
+.team-box .diamond-container {
+  margin-top: 0;
+  margin-bottom: 12px;
+  overflow: visible !important;
+}
+
+/*PREDICT BUTTON*/
+.stButton button {
+  display: block !important;
+  margin: 0 auto !important;
+  padding: 10px 32px !important;
+  border-radius: 8px !important;
+  background-color: #ffb800 !important;
+  color: #3C005A !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  transition: all 0.18s ease !important;
+}
+.stButton button:hover {
+  background-color: #ffd34f !important;
+  transform: scale(1.03) !important;
+}
+
+/*RESPONSIVE */
+@media (max-width: 1100px) {
+  div[data-baseweb="select"] { width: 78% !important; }
+  .team-box { width: 86% !important; }
+  .pl-logo { width: 240px !important; transform: translateY(-6px) !important; }
+}
+@media (max-width: 900px) {
+  .vs-text { font-size: 28px !important; }
+  .diamond-container { width: 130px !important; height: 130px !important; }
+  .team-logo { width: 80px !important; height: auto !important; }
+  .team-box, .prediction-box { width: 92% !important; padding: 18px !important; }
+}
+@media (max-width: 700px) {
+  div[data-testid="stColumns"] > div { gap: 10px !important; }
+  div[data-baseweb="select"] { width: 92% !important; min-width: 0 !important; }
+}
+
+.team-box {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Ensure dropdown + team-box align vertically in their column */
+.column-align {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== FIX HEADER POSITION & ALIGNMENT ===== */
+
+/* Remove Streamlit's auto spacing */
+div[data-testid="stMarkdownContainer"] {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Fix heading wrapper */
+div.stHeadingWithActionElements {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* Fix your h3 specifically */
+h3#score-predictor {
+    margin-top: -12px !important; /* tweak this number until perfect */
+    text-align: center !important;
+}
+
+/* Push center column content down */
+.center-align {
+    margin-top: 30px !important;   /* adjust until perfect */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
